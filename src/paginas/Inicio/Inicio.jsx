@@ -1,4 +1,18 @@
+import posts from "./../../json/posts.json";
+import PostCard from "../../componentes/PostCard/PostCard";
+import styles from "./Inicio.module.css";
+
 const Inicio = () => {
-    return <h1> Alô Mundo</h1>
+    return(
+    <main>
+        <ul className={styles.post}>
+            {posts.map((post) => (
+                <li key={post.id}>
+                    <PostCard post={post} />
+                </li>
+            ))}
+        </ul>
+    </main>
+    )
 }
 export default Inicio

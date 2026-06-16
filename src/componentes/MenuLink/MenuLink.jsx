@@ -3,10 +3,16 @@ import styles from "./MenuLink.module.css"
 
 const MenuLink = ({children, to}) =>{
 
-const Localizacao = useLocation()
+    const localizacao = useLocation();
 
     return(
-        <Link className={Localizacao.pathname === to ? styles.linkDestacado : ""} to={to}>{children}</Link>
+        <Link className={`
+                ${styles.link}
+                ${localizacao.pathname === to ? styles.linkDestacado : ""}
+                `} 
+            to={to}>
+                {children}
+        </Link>
     )
 }
 
